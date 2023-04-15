@@ -80,11 +80,30 @@
 //     return letters.size === alphabet.length
 // }
 
-function isPangram(string){
-    string = string.toLowerCase();
-    return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x){
-        return string.indexOf(x) !== -1;
-    });
-}
+// function isPangram(string){
+//     string = string.toLowerCase();
+//     return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x){
+//         return string.indexOf(x) !== -1;
+//     });
+// }
 
-console.log(isPangram("The quick brown fox jumps over the lazy0++ 999 dog."))
+// console.log(isPangram("The quick brown fox jumps over the lazy0++ 999 dog."))
+
+// function likes(names) {
+//     if (!names.length) {
+//         return 'no one likes this'
+//     } else {
+//         if (names.length === 1) {
+//             return `${names[0]} likes this`
+//         }
+//         else if (names.length === 2) {
+//             return `${names[0]} and ${names[1]} like this`
+//         } else if (names.length === 3){
+//             return `${names[0]}, ${names[1]} and ${names[2]} like this`
+//         }   else if (names.length >= 4) {
+//                 return `${names[0]}, ${names[1]} and ${names.length -2} others like this`
+//         }
+//     }
+// }
+//
+// console.log(likes([]))
