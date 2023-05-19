@@ -89,6 +89,21 @@
 
 // console.log(isPangram("The quick brown fox jumps over the lazy0++ 999 dog."))
 
+ // * @param {number} x
+ // * @return {boolean}
+
+// const isPalindrome = function(x) {
+//     const str = x.toString().split("").reverse().join("")
+//     if (x.toString() === str) {
+//         return true
+//     } else {
+//         return false
+//     }
+// };
+// console.log(isPalindrome('axa'))
+
+
+
 // function likes(names) {
 //     if (!names.length) {
 //         return 'no one likes this'
@@ -107,3 +122,101 @@
 // }
 //
 // console.log(likes([]))
+
+// function boolToWord( bool ){
+//     if (bool === true) {
+//         return 'Yes'
+//     } else {
+//         return 'No'
+//     }
+// }
+//
+// console.log(boolToWord(true))
+
+// function countBy(x, n) {
+//     let z = [];
+//     for (c = 0; c < n; c++) {
+//         res += n[c];
+//     }
+//
+//     return res;
+// }
+//
+// console.log(countBy(1,10)) DIDNT SOLVE YET
+
+// /**
+//  * @param {string} s
+//  * @return {number}
+//  */
+// const romanToInt = (s) => {
+//     const I = 1
+//     const V = 5
+//
+//     console.log(V)
+//     // s.map((el) => {
+//     //
+//     // })
+// };
+//
+// console.log(romanToInt('LVIII'))
+
+// function romanToDecimal(romanNumeral) {
+//     let decimal = 0;
+//     const romanNumerals = {
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000
+//     };
+//
+//     for (let i = 0; i < romanNumeral.length; i++) {
+//         let currentSymbolValue = romanNumerals[romanNumeral[i]];
+//         let nextSymbolValue = romanNumerals[romanNumeral[i+1]];
+//
+//         if (nextSymbolValue && currentSymbolValue < nextSymbolValue) {
+//             decimal -= currentSymbolValue;
+//         } else {
+//             decimal += currentSymbolValue;
+//         }
+//     }
+//
+//     return decimal;
+// }
+//
+// let romanNumeral = "MCMXCIV";
+// let decimalNum = romanToDecimal(romanNumeral);
+// console.log(decimalNum); // выводит 5
+
+// const romanToInt = function(s) {
+//     let decimal = 0
+//     const objRome = {
+//         I:1,
+//         V:5,
+//         X:10,
+//         L:50,
+//         C:100,
+//         D:500,
+//         M:1000,
+//     };
+//
+//     for (let i = 0; i < s.length; i++) {
+//         let currentRes = objRome[s[i]]
+//         let nextRes = objRome[s[i+1]]
+//
+//         if (nextRes && currentRes < nextRes) {
+//             decimal -= currentRes
+//         } else {
+//             decimal += currentRes
+//         }
+//     }
+//
+//     return decimal
+// };
+//
+// // let s = "MCMXCIV";
+// let decimalNum = romanToInt(s)
+// console.log(decimalNum)
+
