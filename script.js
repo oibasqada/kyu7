@@ -222,21 +222,36 @@
 
 // let res = 0
 
-const twoSum = (nums, target) => {
-    let res = 0
-    for (let i = 0; i < nums.length; i++){
-        const num = nums[i]
-        const diff = target - num
-        for (let c = 0; c < nums.length;  c++){
-            const isIt = diff[c]
-            if (isIt + num === target) {
-                return res = [nums[i], nums[c]]
-            }
+// const twoSum = (nums, target) => {
+//     let res = 0
+//     for (let i = 0; i < nums.length; i++){
+//         const num = nums[i]
+//         const diff = target - num
+//         for (let c = 0; c < nums.length;  c++){
+//             const isIt = diff[c]
+//             if (isIt + num === target) {
+//                 return res = [nums[i], nums[c]]
+//             }
+//         }
+//         return res
+//     }
+//
+// };
+
+// console.log(twoSum([2,3,8,9], 6))
+
+const once = function(fn) {
+    let oneCall = false
+    let res
+
+    return function(...args){
+
+        if (!oneCall){
+            oneCall = true
+            res = fn.apply(this, args)
+            return res
+        } else {
+            return undefined
         }
-        return res
     }
-
 };
-
-console.log(twoSum([2,3,8,9], 6))
-
