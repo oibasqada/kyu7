@@ -222,6 +222,39 @@
 
 // let res = 0
 
+
+// const once = function(fn) {
+//     let oneCall = false
+//     let res
+//
+//     return function(...args){
+//
+//         if (!oneCall){
+//             oneCall = true
+//             res = fn.apply(this, args)
+//             return res
+//         } else {
+//             return undefined
+//         }
+//     }
+// };
+
+
+const compose = function(functions) {
+    return function(x) {
+        if (functions.length === 0){
+            return x
+        } else {
+            functions.reverse().forEach(fn => {
+                x = fn(x)
+            })
+            return x
+        }
+    }
+};
+
+console.log(compose([x => x + 1, x => x * x, x => 2 * x], x = 4))
+
 // const twoSum = (nums, target) => {
 //     let res = 0
 //     for (let i = 0; i < nums.length; i++){
@@ -239,19 +272,3 @@
 // };
 
 // console.log(twoSum([2,3,8,9], 6))
-
-const once = function(fn) {
-    let oneCall = false
-    let res
-
-    return function(...args){
-
-        if (!oneCall){
-            oneCall = true
-            res = fn.apply(this, args)
-            return res
-        } else {
-            return undefined
-        }
-    }
-};
