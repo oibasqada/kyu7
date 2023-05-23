@@ -240,20 +240,20 @@
 // };
 
 
-const compose = function(functions) {
-    return function(x) {
-        if (functions.length === 0){
-            return x
-        } else {
-            functions.reverse().forEach(fn => {
-                x = fn(x)
-            })
-            return x
-        }
-    }
-};
-
-console.log(compose([x => x + 1, x => x * x, x => 2 * x], x = 4))
+// const compose = function(functions) {
+//     return function(x) {
+//         if (functions.length === 0){
+//             return x
+//         } else {
+//             functions.reverse().forEach(fn => {
+//                 x = fn(x)
+//             })
+//             return x
+//         }
+//     }
+// };
+//
+// console.log(compose([x => x + 1, x => x * x, x => 2 * x], x = 4))
 
 // const twoSum = (nums, target) => {
 //     let res = 0
@@ -272,3 +272,24 @@ console.log(compose([x => x + 1, x => x * x, x => 2 * x], x = 4))
 // };
 
 // console.log(twoSum([2,3,8,9], 6))
+
+
+const mergeAlternately = function(word1, word2) {
+
+    let res = ''
+    let i = 0, j = 0
+
+    while (i < word1.length || j < word2.length){
+        if (i < word1.length) {
+            res += word1[i]
+            i++
+        }
+        if (j < word2.length) {
+            res += word2[j]
+            j++
+        }
+    }
+    return res
+};
+
+console.log(mergeAlternately('abc','qwe'))
