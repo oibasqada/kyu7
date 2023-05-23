@@ -315,23 +315,35 @@
 //
 // console.log(alternateStrings('abc', 'def'))
 
-function MaxFind (arr) {
-    return arr.sort(function (a,b){
-        return b - a
-    })[0]
+// function MaxFind (arr) {
+//     return arr.sort(function (a,b){
+//         return b - a
+//     })[0]
+//
+//     // let max;
+//     // let min = arr[0]
+//     // for (let i = 0; i < arr.length; i++){
+//     //     if((arr[i]) < min) {
+//     //         min = arr[i];
+//     //     } else {
+//     //         max = arr[i]
+//     //     }
+//     // }
+//     // return max
+// }
+//
+// console.log(MaxFind([3,4,5,6,700,8,9,234]))
 
-    // let max;
-    // let min = arr[0]
-    // for (let i = 0; i < arr.length; i++){
-    //     if((arr[i]) < min) {
-    //         min = arr[i];
-    //     } else {
-    //         max = arr[i]
-    //     }
-    // }
-    // return max
-}
+const gcdOfStrings = function(str1, str2) {
+    if(str1 + str2 !== str2 + str1) return '';
 
-console.log(MaxFind([3,4,5,6,700,8,9,234]))
+    const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+    const gcdLength = gcd(str1.length, str2.length);
+
+    return str1.slice(0, gcdLength);
+};
+
+
+console.log(gcdOfStrings('abcdef','abc'))
 
 
