@@ -274,22 +274,64 @@
 // console.log(twoSum([2,3,8,9], 6))
 
 
-const mergeAlternately = function(word1, word2) {
+// const mergeAlternately = function(word1, word2) {
+//
+//     let res = ''
+//     let i = 0, j = 0
+//
+//     while (i < word1.length || j < word2.length){
+//         if (i < word1.length) {
+//             res += word1[i]
+//             i++
+//         }
+//         if (j < word2.length) {
+//             res += word2[j]
+//             j++
+//         }
+//     }
+//     return res
+// };
+//
+// console.log(mergeAlternately('abc','qwe'))
 
-    let res = ''
-    let i = 0, j = 0
 
-    while (i < word1.length || j < word2.length){
-        if (i < word1.length) {
-            res += word1[i]
-            i++
-        }
-        if (j < word2.length) {
-            res += word2[j]
-            j++
-        }
-    }
-    return res
-};
+// const alternateStrings = (str1, str2) => {
+//
+//     let res = ''
+//     let i = 0, j =0
+//
+//     while ( i < str1.length || j < str2.length) {
+//         if (i < str1.length) {
+//             res += str1[i]
+//             i++
+//         }
+//         if (j < str2.length) {
+//             res += str2[j]
+//             j++
+//         }
+//     }
+//     return res
+// }
+//
+// console.log(alternateStrings('abc', 'def'))
 
-console.log(mergeAlternately('abc','qwe'))
+function MaxFind (arr) {
+    return arr.sort(function (a,b){
+        return b - a
+    })[0]
+
+    // let max;
+    // let min = arr[0]
+    // for (let i = 0; i < arr.length; i++){
+    //     if((arr[i]) < min) {
+    //         min = arr[i];
+    //     } else {
+    //         max = arr[i]
+    //     }
+    // }
+    // return max
+}
+
+console.log(MaxFind([3,4,5,6,700,8,9,234]))
+
+
