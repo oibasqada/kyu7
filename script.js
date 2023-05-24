@@ -334,16 +334,53 @@
 //
 // console.log(MaxFind([3,4,5,6,700,8,9,234]))
 
-const gcdOfStrings = function(str1, str2) {
-    if(str1 + str2 !== str2 + str1) return '';
+// const gcdOfStrings = function(str1, str2) {
+//     if(str1 + str2 !== str2 + str1) return '';
+//
+//     const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+//     const gcdLength = gcd(str1.length, str2.length);
+//
+//     return str1.slice(0, gcdLength);
+// };
+//
+//
+// console.log(gcdOfStrings('abcdef','abc'))
 
-    const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
-    const gcdLength = gcd(str1.length, str2.length);
+const kidsWithCandies = function(candies, extraCandies) {
 
-    return str1.slice(0, gcdLength);
+        const max = Math.max(...candies);
+        return candies.map(candy => candy + extraCandies >= max);
+
+    // let sortedCandies = candies.slice().sort(function (a, b) {
+    //     return b - a
+    // })
+    //
+    // for (let i = 0; i < candies.length; i++) {
+    //     if (candies[i] + extraCandies >= sortedCandies[0]) {
+    //         candies[i] = true
+    //     } else {
+    //         candies[i] = false
+    //     }
+    // }
+    //
+    // return candies
 };
 
+console.log(kidsWithCandies([4,3,1,5,6,], 3))
 
-console.log(gcdOfStrings('abcdef','abc'))
+// for (let i = 0; i < candies.length; i++) {
+//     res[i] = candies[i] + extraCandies
+// }
+//
+// for (let i = 0; i < candies.length; i++) {
+//     if (candies[i] > Math.max(...res)) {
+//         res[i] = false
+//     } else {
+//         res[i] = true
+//     }
+// }
+// return res
+
+
 
 
