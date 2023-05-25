@@ -346,10 +346,10 @@
 //
 // console.log(gcdOfStrings('abcdef','abc'))
 
-const kidsWithCandies = function(candies, extraCandies) {
-
-        const max = Math.max(...candies);
-        return candies.map(candy => candy + extraCandies >= max);
+// const kidsWithCandies = function(candies, extraCandies) {
+//
+//         const max = Math.max(...candies);
+//         return candies.map(candy => candy + extraCandies >= max);
 
     // let sortedCandies = candies.slice().sort(function (a, b) {
     //     return b - a
@@ -364,23 +364,35 @@ const kidsWithCandies = function(candies, extraCandies) {
     // }
     //
     // return candies
-};
+// };
 
-console.log(kidsWithCandies([4,3,1,5,6,], 3))
+// console.log(kidsWithCandies([4,3,1,5,6,], 3))
 
-// for (let i = 0; i < candies.length; i++) {
-//     res[i] = candies[i] + extraCandies
+// function domainName(url){
+//     return  url.substring(
+//         url.indexOf('/') +2,
+//         url.lastIndexOf('.')
+//     )
+//     if ()
 // }
 //
-// for (let i = 0; i < candies.length; i++) {
-//     if (candies[i] > Math.max(...res)) {
-//         res[i] = false
-//     } else {
-//         res[i] = true
-//     }
-// }
-// return res
+// console.log(domainName("https://www.google.co.jp")) //return later!!!
 
+const canPlaceFlowers = function(flowerbed, n) {
 
+    for (let i = 0; i < flowerbed.length && n !== 0; i++) {
+        //прохожу по длине массива, если n не равен 0
+        if (
+            flowerbed[i] === 0 && //проверяю если текущий элемент массива равен 0 и..
+            flowerbed[i - 1] !== 1 && //впереди стоящий текущему элементу, элемент не равен 1 и..
+            flowerbed[i + 1] !== 1 //стоящий после текущего элемента, элемент не равен 1
+        ) {
+            n-- //уменьшаю значение n (количество оставшихся цветов для посадки)
+            i++ //инкрементирую i на 1, чтобы пропустить следущий участок грядки, так как цветок уже размещен.
+        }
+    }
+    return n === 0 //после завершения цикла проверяю условие n === 0. Если === то все цветы посажены и возвращается true else false
+};
 
+console.log(canPlaceFlowers([1,0,0,0,1,0,0,0,1], 2))
 
