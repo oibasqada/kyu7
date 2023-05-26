@@ -378,21 +378,58 @@
 //
 // console.log(domainName("https://www.google.co.jp")) //return later!!!
 
-const canPlaceFlowers = function(flowerbed, n) {
+// const canPlaceFlowers = function(flowerbed, n) {
+//
+//     for (let i = 0; i < flowerbed.length && n !== 0; i++) {
+//         //прохожу по длине массива, если n не равен 0
+//         if (
+//             flowerbed[i] === 0 && //проверяю если текущий элемент массива равен 0 и..
+//             flowerbed[i - 1] !== 1 && //впереди стоящий текущему элементу, элемент не равен 1 и..
+//             flowerbed[i + 1] !== 1 //стоящий после текущего элемента, элемент не равен 1
+//         ) {
+//             n-- //уменьшаю значение n (количество оставшихся цветов для посадки)
+//             i++ //инкрементирую i на 1, чтобы пропустить следущий участок грядки, так как цветок уже размещен.
+//         }
+//     }
+//     return n === 0 //после завершения цикла проверяю условие n === 0. Если === то все цветы посажены и возвращается true else false
+// };
+//
+// console.log(canPlaceFlowers([1,0,0,0,1,0,0,0,1], 2))
 
-    for (let i = 0; i < flowerbed.length && n !== 0; i++) {
-        //прохожу по длине массива, если n не равен 0
-        if (
-            flowerbed[i] === 0 && //проверяю если текущий элемент массива равен 0 и..
-            flowerbed[i - 1] !== 1 && //впереди стоящий текущему элементу, элемент не равен 1 и..
-            flowerbed[i + 1] !== 1 //стоящий после текущего элемента, элемент не равен 1
-        ) {
-            n-- //уменьшаю значение n (количество оставшихся цветов для посадки)
-            i++ //инкрементирую i на 1, чтобы пропустить следущий участок грядки, так как цветок уже размещен.
-        }
+const reverseVowels = function(s) {
+
+    const vowels = {};
+    for (const char of 'aeiouAEIOU') {
+        vowels[char] = true
     }
-    return n === 0 //после завершения цикла проверяю условие n === 0. Если === то все цветы посажены и возвращается true else false
+
+    const characters = s.split('');
+
+    let left = 0;
+    let right = s.length -1;
+
+    while (left < right) {
+        while (left < right && !(s[left] in vowels)) {
+            left += 1;
+        }
+
+        while (left < right && !(s[right] in vowels)) {
+            right -= 1;
+        }
+
+        swap(characters, left, right);
+        left += 1
+        right -= 1
+    }
+
+    return characters.join('')
 };
 
-console.log(canPlaceFlowers([1,0,0,0,1,0,0,0,1], 2))
+const swap = (arr, i, j) => {
+    const temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+}
+
+console.log(reverseVowels('hello'))
 
