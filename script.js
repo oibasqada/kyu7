@@ -433,24 +433,36 @@
 //
 // console.log(reverseVowels('hello'))
 
-const reverseWords = function(s) {
-    const words = s.split(' ').filter(word => word !== '')
-    words.reverse()
+// const reverseWords = function(s) {
+//     const words = s.split(' ').filter(word => word !== '')
+//     words.reverse()
+//
+//     // let left = 0
+//     // let right = s.length -1
+//     //
+//     // while (left < right){
+//     //     const temp = words[left]
+//     //     words[left] = words[right]
+//     //     words[right] = temp
+//     //     left++
+//     //     right--
+//     // }
+//     return words.join(' ')
+// };
+//
+//
+// console.log(reverseWords('the sky is blue   1'))
 
-    // let left = 0
-    // let right = s.length -1
-    //
-    // while (left < right){
-    //     const temp = words[left]
-    //     words[left] = words[right]
-    //     words[right] = temp
-    //     left++
-    //     right--
-    // }
-    return words.join(' ')
+
+const reverseWords = function(s) {
+    let words = s.split(' ')
+    let reverseStr = ''
+    for (let i = words.length -1; i >= 0; i--){
+        if (words[i] === '') continue
+        if (reverseStr.length > 0) reverseStr += ' '
+        reverseStr += words[i]
+    }
+    return reverseStr
 };
 
-
 console.log(reverseWords('the sky is blue   1'))
-
-// 1.
