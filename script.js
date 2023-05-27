@@ -396,40 +396,61 @@
 //
 // console.log(canPlaceFlowers([1,0,0,0,1,0,0,0,1], 2))
 
-const reverseVowels = function(s) {
+// const reverseVowels = function(s) {
+//
+//     const vowels = {}; //создаю объект, где будут храниться все гласные
+//     for (const char of 'aeiouAEIOU') {
+//         vowels[char] = true
+//     }
+//
+//     const characters = s.split('');
+//
+//     let left = 0;
+//     let right = s.length -1;
+//
+//     while (left < right) {
+//         while (left < right && !(s[left] in vowels)) {
+//             left += 1;
+//         }
+//
+//         while (left < right && !(s[right] in vowels)) {
+//             right -= 1;
+//         }
+//
+//         swap(characters, left, right);
+//         left += 1
+//         right -= 1
+//     }
+//
+//     return characters.join('')
+// };
+//
+// const swap = (arr, i, j) => {
+//     const temp = arr[i]
+//     arr[i] = arr[j]
+//     arr[j] = temp
+// }
+//
+// console.log(reverseVowels('hello'))
 
-    const vowels = {};
-    for (const char of 'aeiouAEIOU') {
-        vowels[char] = true
-    }
+const reverseWords = function(s) {
+    const words = s.split(' ').filter(word => word !== '')
+    words.reverse()
 
-    const characters = s.split('');
-
-    let left = 0;
-    let right = s.length -1;
-
-    while (left < right) {
-        while (left < right && !(s[left] in vowels)) {
-            left += 1;
-        }
-
-        while (left < right && !(s[right] in vowels)) {
-            right -= 1;
-        }
-
-        swap(characters, left, right);
-        left += 1
-        right -= 1
-    }
-
-    return characters.join('')
+    // let left = 0
+    // let right = s.length -1
+    //
+    // while (left < right){
+    //     const temp = words[left]
+    //     words[left] = words[right]
+    //     words[right] = temp
+    //     left++
+    //     right--
+    // }
+    return words.join(' ')
 };
 
-const swap = (arr, i, j) => {
-    const temp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = temp
-}
 
-console.log(reverseVowels('hello'))
+console.log(reverseWords('the sky is blue   1'))
 
+// 1.
