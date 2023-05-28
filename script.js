@@ -498,30 +498,77 @@
 //
 // console.log(sumArray([2,3,4,5,6,7,8,9]))
 
-const findMax = (arr) => {
-    // arr.sort(function (a, b){
-    //     return b - a
-    // })
+// const findMax = (arr) => {
+//     // arr.sort(function (a, b){
+//     //     return b - a
+//     // })
+//
+//     // let max = arr[0] || null
+//     // let num = null
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     num = arr[i]
+//     //     max = Math.max(max, num)
+//     // }
+//
+//     if (arr.length === 0) {
+//         return null
+//     }
+//     let max = arr[0]
+//
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > max) {
+//             max = arr[i]
+//         }
+//     }
+//
+//     return max
+// }
+// console.log(findMax([2,3,4,5,6,7,8,9]))
 
-    // let max = arr[0] || null
-    // let num = null
-    // for (let i = 0; i < arr.length; i++) {
-    //     num = arr[i]
-    //     max = Math.max(max, num)
-    // }
+// const reverseArray = function (arr){
+//     if (arr.length === 0){
+//         return null
+//     }
+//     // return arr.reverse()
+//     let res = new Array
+//     for (let i = arr.length -1; i >= 0; i--) {
+//         res.push(arr[i])
+//     }
+//     return res
+// }
+// console.log(reverseArray([1,2,3,4,5,6]))
 
-    if (arr.length === 0) {
+// const uniqueElements = function (arr) {
+//     if (arr.length === 0) {
+//         return null
+//     }
+//     return arr.filter((val, idx, array) => array.indexOf(val) === idx)
+//
+//     // let uniq = []
+//     //
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     if (uniq.indexOf(arr[i]) === -1) {
+//     //         uniq.push(arr[i])
+//     //     }
+//     // }
+//     // return uniq
+//
+//     // let uniq = [...new Set(arr)]
+//     // return uniq
+// }
+// console.log(uniqueElements([1,1,2,3,4,5,5,5,6,'unique', 'unique','world']))
+
+const multiplyByFactor = function (array, n) {
+    if (array.length === 0) {
         return null
     }
-    let max = arr[0]
-
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i]
-        }
+    let res = new Array(array.length)
+    for (let i = 0; i < array.length; i++) {
+        res[i] = array[i] * n
     }
+    return res
 
-    return max
+    // return array.map((el) => el * n, 0)
 }
-console.log(findMax([2,3,4,5,6,7,8,9]))
 
+console.log(multiplyByFactor([1,2,3,4,5,6], 4))
