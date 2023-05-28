@@ -467,24 +467,61 @@
 //
 // console.log(reverseWords('the sky is blue   1'))
 
-const productExceptSelf = function(nums) {
+// const productExceptSelf = function(nums) {
+//
+//     let left = []
+//     let right = []
+//     let leftMult = 1
+//     let rightMult = 1
+//
+//     for (let i = 0; i < nums.length; i++) {
+//         left[i] = leftMult
+//         leftMult *= nums[i]
+//     }
+//     for (let i = nums.length -1; i >= 0; i--) {
+//         right[i] = rightMult
+//         rightMult *= nums[i]
+//         right[i] *= left[i]
+//     }
+//
+//     return right
+// };
+//
+// console.log(productExceptSelf([1,2,3,4]))
 
-    let left = []
-    let right = []
-    let leftMult = 1
-    let rightMult = 1
 
-    for (let i = 0; i < nums.length; i++) {
-        left[i] = leftMult
-        leftMult *= nums[i]
+// some tasks from chatGPT for covering current topic
+
+// const sumArray = (arr) => {
+//     return arr.reduce((acc, el)=> acc + el,0)
+// }
+//
+// console.log(sumArray([2,3,4,5,6,7,8,9]))
+
+const findMax = (arr) => {
+    // arr.sort(function (a, b){
+    //     return b - a
+    // })
+
+    // let max = arr[0] || null
+    // let num = null
+    // for (let i = 0; i < arr.length; i++) {
+    //     num = arr[i]
+    //     max = Math.max(max, num)
+    // }
+
+    if (arr.length === 0) {
+        return null
     }
-    for (let i = nums.length -1; i >= 0; i--) {
-        right[i] = rightMult
-        rightMult *= nums[i]
-        right[i] *= left[i]
+    let max = arr[0]
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
     }
 
-    return right
-};
+    return max
+}
+console.log(findMax([2,3,4,5,6,7,8,9]))
 
-console.log(productExceptSelf([1,2,3,4]))
