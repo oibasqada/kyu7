@@ -454,15 +454,37 @@
 // console.log(reverseWords('the sky is blue   1'))
 
 
-const reverseWords = function(s) {
-    let words = s.split(' ')
-    let reverseStr = ''
-    for (let i = words.length -1; i >= 0; i--){
-        if (words[i] === '') continue
-        if (reverseStr.length > 0) reverseStr += ' '
-        reverseStr += words[i]
+// const reverseWords = function(s) {
+//     let words = s.split(' ')
+//     let reverseStr = ''
+//     for (let i = words.length -1; i >= 0; i--){
+//         if (words[i] === '') continue
+//         if (reverseStr.length > 0) reverseStr += ' '
+//         reverseStr += words[i]
+//     }
+//     return reverseStr
+// };
+//
+// console.log(reverseWords('the sky is blue   1'))
+
+const productExceptSelf = function(nums) {
+
+    let left = []
+    let right = []
+    let leftMult = 1
+    let rightMult = 1
+
+    for (let i = 0; i < nums.length; i++) {
+        left[i] = leftMult
+        leftMult *= nums[i]
     }
-    return reverseStr
+    for (let i = nums.length -1; i >= 0; i--) {
+        right[i] = rightMult
+        rightMult *= nums[i]
+        right[i] *= left[i]
+    }
+
+    return right
 };
 
-console.log(reverseWords('the sky is blue   1'))
+console.log(productExceptSelf([1,2,3,4]))
