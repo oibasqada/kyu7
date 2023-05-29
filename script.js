@@ -558,17 +558,63 @@
 // }
 // console.log(uniqueElements([1,1,2,3,4,5,5,5,6,'unique', 'unique','world']))
 
-const multiplyByFactor = function (array, n) {
-    if (array.length === 0) {
-        return null
-    }
-    let res = new Array(array.length)
-    for (let i = 0; i < array.length; i++) {
-        res[i] = array[i] * n
-    }
-    return res
+// const multiplyByFactor = function (array, n) {
+//     if (array.length === 0) {
+//         return null
+//     }
+//     let res = new Array(array.length)
+//     for (let i = 0; i < array.length; i++) {
+//         res[i] = array[i] * n
+//     }
+//     return res
+//
+//     // return array.map((el) => el * n, 0)
+// }
+//
+// console.log(multiplyByFactor([1,2,3,4,5,6], 4))
 
-    // return array.map((el) => el * n, 0)
-}
+//13th of leetcode streak
 
-console.log(multiplyByFactor([1,2,3,4,5,6], 4))
+const increasingTriplet = function(nums) {
+    let first = Infinity
+    let second = Infinity
+
+    for (let num of nums) {
+        if (num <= first) {
+            first = num
+        } else if (num <= second) {
+            second = num
+        } else {
+            return true
+        }
+    }
+    return false
+
+
+    // for (let i = 0; i < nums.length; i++) {
+    //     for (let j = i+1; j < nums.length -1; j++) {
+    //         if (nums[i] < nums[j]) {
+    //             for (let k = j+1; k < nums.length; k++) {
+    //                 if (nums[j] < nums[k]) {
+    //                     return true
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // return false
+
+    // for (let i = 0; i < nums.length; i++) {
+    //     if (
+    //         nums[i] > nums[i - 1] &&
+    //         nums[i] < nums[i + 1] &&
+    //         nums[i] > nums[i - 2] &&
+    //         nums[i] < nums[i + 2]
+    //     ) {
+    //         return true
+    //     }
+    // }
+    // return false
+};
+
+console.log(increasingTriplet([3,2,3]))
