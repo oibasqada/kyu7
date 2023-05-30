@@ -255,24 +255,6 @@
 //
 // console.log(compose([x => x + 1, x => x * x, x => 2 * x], x = 4))
 
-// const twoSum = (nums, target) => {
-//     let res = 0
-//     for (let i = 0; i < nums.length; i++){
-//         const num = nums[i]
-//         const diff = target - num
-//         for (let c = 0; c < nums.length;  c++){
-//             const isIt = diff[c]
-//             if (isIt + num === target) {
-//                 return res = [nums[i], nums[c]]
-//             }
-//         }
-//         return res
-//     }
-//
-// };
-
-// console.log(twoSum([2,3,8,9], 6))
-
 
 // const mergeAlternately = function(word1, word2) {
 //
@@ -575,20 +557,20 @@
 
 //13th of leetcode streak
 
-const increasingTriplet = function(nums) {
-    let first = Infinity
-    let second = Infinity
-
-    for (let num of nums) {
-        if (num <= first) {
-            first = num
-        } else if (num <= second) {
-            second = num
-        } else {
-            return true
-        }
-    }
-    return false
+// const increasingTriplet = function(nums) {
+//     let first = Infinity
+//     let second = Infinity
+//
+//     for (let num of nums) {
+//         if (num <= first) {
+//             first = num
+//         } else if (num <= second) {
+//             second = num
+//         } else {
+//             return true
+//         }
+//     }
+//     return false
 
 
     // for (let i = 0; i < nums.length; i++) {
@@ -615,6 +597,60 @@ const increasingTriplet = function(nums) {
     //     }
     // }
     // return false
+// };
+
+// console.log(increasingTriplet([3,2,3]))
+
+
+const twoSum = (nums, target) => {
+    // let start = 0;
+    // let end = nums.length - 1;
+    //
+    // while (start < end) {
+    //     if (nums[start] + nums[end] === target) {
+    //         return [start, end];
+    //     } else if (nums[start] + nums[end] < target) {
+    //         start++;
+    //     } else {
+    //         end--;
+    //     }
+    // }
+    // return []
+
+
+
+    const n = nums.length
+    let match = false
+    for (let i = 0, j = n-1; i <= j && !match; i++, j--) {
+        let diff1 = target - nums[i]
+        let idx1 = nums.indexOf(diff1)
+        let diff2 = target - nums[j]
+        let idx2 = nums.indexOf(diff2)
+
+        if (idx1 > -1 && idx1 !== i) {
+            match = true
+            return [i, idx1]
+        }
+        if (idx2 > -1 && idx2 !== j) {
+            match = true
+            return [j, idx2]
+        }
+    }
 };
 
-console.log(increasingTriplet([3,2,3]))
+console.log(twoSum([-1,-2,-3,-4,-5], -8));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
