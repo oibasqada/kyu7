@@ -602,43 +602,91 @@
 // console.log(increasingTriplet([3,2,3]))
 
 
-const twoSum = (nums, target) => {
-    // let start = 0;
-    // let end = nums.length - 1;
-    //
-    // while (start < end) {
-    //     if (nums[start] + nums[end] === target) {
-    //         return [start, end];
-    //     } else if (nums[start] + nums[end] < target) {
-    //         start++;
-    //     } else {
-    //         end--;
-    //     }
-    // }
-    // return []
+// const twoSum = (nums, target) => {
+//     // let start = 0;
+//     // let end = nums.length - 1;
+//     //
+//     // while (start < end) {
+//     //     if (nums[start] + nums[end] === target) {
+//     //         return [start, end];
+//     //     } else if (nums[start] + nums[end] < target) {
+//     //         start++;
+//     //     } else {
+//     //         end--;
+//     //     }
+//     // }
+//     // return []
+//
+//     const n = nums.length
+//     let match = false
+//     for (let i = 0, j = n-1; i <= j && !match; i++, j--) {
+//         let diff1 = target - nums[i]
+//         let idx1 = nums.indexOf(diff1)
+//         let diff2 = target - nums[j]
+//         let idx2 = nums.indexOf(diff2)
+//
+//         if (idx1 > -1 && idx1 !== i) {
+//             match = true
+//             return [i, idx1]
+//         }
+//         if (idx2 > -1 && idx2 !== j) {
+//             match = true
+//             return [j, idx2]
+//         }
+//     }
+// };
+//
+// console.log(twoSum([-1,-2,-3,-4,-5], -8));
+//
+// /**
+//  * @param {number[]} nums
+//  */
+// class ArrayWrapper {
+//     constructor(nums, operator) {
+//         this.nums = nums
+//         this.operator = operator
+//     }
+//     if (operator = 'Add') {
+//         return nums.valueOf()
+//     }
+//     if (operator = 'String') {
+//         return nums.toString()
+//     }
+//
+// };
+//
+// ArrayWrapper.prototype.valueOf = function() {
+//     return nums++
+// }
+//
+// ArrayWrapper.prototype.toString = function() {
+//     return nums
+// }
+//
+// /**
+//  * const obj1 = new ArrayWrapper([1,2]);
+//  * const obj2 = new ArrayWrapper([3,4]);
+//  * obj1 + obj2; // 10
+//  * String(obj1); // "[1,2]"
+//  * String(obj2); // "[3,4]"
+//  */
+
+// function narcissistic(value) {
+//     // Code me to return true or false
+//     let res = 0
+//     let strValue = value.toString()
+//     let grade = strValue.length
+//     for (let i = 0; i < grade; i++) {
+//         const digit = parseInt(strValue[i])
+//         res+= digit ** grade
+//     }
+//     return res === value
+// }
+//
+// console.log(narcissistic(153))
 
 
 
-    const n = nums.length
-    let match = false
-    for (let i = 0, j = n-1; i <= j && !match; i++, j--) {
-        let diff1 = target - nums[i]
-        let idx1 = nums.indexOf(diff1)
-        let diff2 = target - nums[j]
-        let idx2 = nums.indexOf(diff2)
-
-        if (idx1 > -1 && idx1 !== i) {
-            match = true
-            return [i, idx1]
-        }
-        if (idx2 > -1 && idx2 !== j) {
-            match = true
-            return [j, idx2]
-        }
-    }
-};
-
-console.log(twoSum([-1,-2,-3,-4,-5], -8));
 
 
 
